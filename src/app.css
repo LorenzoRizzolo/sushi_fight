@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Condiment&display=swap');
+
+:root{
+    --bg-color: rgb(84, 152, 230);
+}
+
+html {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  font-family: system-ui, sans-serif;
+}
+
+body{
+    margin: 0;
+    max-width: 800px;
+    margin: auto;
+}
+body *{
+    color: white;
+}
+
+main{
+    margin: 10px;
+}
+
+header{
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+header h1{
+    margin: 0;
+}
+
+.special_font{
+    font-family: "Condiment", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 200%;
+}
+.special_font .big{
+    font-size: 200%;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+button.glass{
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    user-select: none;
+    outline: none;
+}
+button.glass:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 15px rgba(200, 200, 200, 0.2);
+}
+
+button{
+    font-size: 110%;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Condiment", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 180%;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px;
+    font-size: 80%;
+    max-width: 800px;
+    margin: auto;
+}
