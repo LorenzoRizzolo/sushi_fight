@@ -15,6 +15,10 @@
     <b>Inizia</b> la sfida !
 </button>
 
+<footer>
+	Lorenzo Rizzolo & Eleonora Campus Product 2025
+</footer>
+
 <script>
     import { goto } from '$app/navigation';
 

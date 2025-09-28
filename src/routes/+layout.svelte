@@ -17,7 +17,3 @@
 	<slot/>
 </main>
 
-
-<footer>
-	Lorenzo Rizzolo & Eleonora Campus Product 2025
-</footer>
