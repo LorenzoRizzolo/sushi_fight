@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo "Insert a comment please"
+    exit 1
+else
+    COMMIT_MESSAGE="$1"
+fi
+
+echo "Compiling client..."
+npm run build
+
+git pull
+git add .
+git commit -m "$COMMIT_MESSAGE"
+git push
