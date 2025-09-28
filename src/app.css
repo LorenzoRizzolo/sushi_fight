@@ -16,6 +16,7 @@ body{
     margin: 0;
     max-width: 800px;
     margin: auto;
+    padding-bottom: 20px;
 }
 body *{
     color: white;
