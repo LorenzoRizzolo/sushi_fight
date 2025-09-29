@@ -63,6 +63,7 @@
     })
 
     function goBack(){
+        localStorage.removeItem("fight")
         goto("/")
     }
 </script>
