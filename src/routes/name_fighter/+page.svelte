@@ -12,16 +12,16 @@
     <h2>Inserisci i nomi dei partecipanti</h2>
 </div>
 
-{#each fight as fighter, i}
+{#each fight.players as fighter, i}
     <div class="flex fighter">
         <div class="glass icon"><SushiIcon n={RandomIcon()}/></div>
-        <input type="text" bind:value={fight[i].username}>
+        <input type="text" placeholder="username..." bind:value={fight.players[i].username}>
     </div>
 {/each}
 
 <br>
 <div class="center">
-    <button class="glass" onclick={inizia_combattimento}>
+    <button class="glass big special_font" onclick={inizia_combattimento}>
         <img src="/icons/sushi.png" alt=""> Inizia a Combattere
     </button>
 </div>
@@ -40,6 +40,16 @@
     </div>
 </Popup>
 
+<Popup name="error">
+    Completa tutti i nomi prima di iniziare!
+    <br><br>
+    <div class="flex">
+        <button class="glass" onclick={ClosePopup}>
+            <SushiIcon n={5}/> OK
+        </button>
+    </div>
+</Popup>
+
 <script>
     import { goto } from "$app/navigation";
     import { ClosePopup, OpenPopup, RandomIcon } from "$lib/store";
@@ -51,8 +61,12 @@
     let fight = [];
 
     onMount(() => {
-        const fightRaw = localStorage.getItem("fight");
-        fight = fightRaw ? JSON.parse(fightRaw) : null;
+        if(!localStorage.getItem("fight")){
+            goto("/")
+        }else{
+            const fightRaw = localStorage.getItem("fight");
+            fight = fightRaw ? JSON.parse(fightRaw) : null;
+        }
     });
     
     function goBack(){
@@ -65,23 +79,29 @@
     }
 
     function inizia_combattimento(){
-        console.log(fight)
+        if(fight.players.every(item=>item.username!="")){
+            localStorage.setItem("fight", JSON.stringify(fight))
+            goto("/fight")
+        }else{
+            OpenPopup("error")
+        }
     }
 
 </script>
 
 <style>
-    .flex{
-        display: flex;
-        align-items: center;
-    }
-    .flex > *{
-        margin-right: 10px;
-    }
-
     .flex.fighter{
         margin-bottom: 8px;
         justify-content: center;
+    }
+    .flex.fighter > *{
+        flex: none;
+    }
+
+    button.big{
+        font-size: 250%;
+        margin-top: 30px;
+        background: rgba(255, 196, 0, 0.342);
     }
 
     .icon{

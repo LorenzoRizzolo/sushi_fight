@@ -1,10 +1,13 @@
 <script>
   export let count = 0;
 
-  let limit = 10
+  export let limit = null
 
   function increment() {
-    count += count<limit? 1:0;
+    if(limit!=null && count>=limit){
+        return
+    }
+    count +=1
   }
 
   function decrement() {
@@ -52,6 +55,6 @@
 
 <div class="counter">
   <button class="btn" on:click={decrement}>-</button>
-  <div class="count-display">{count}</div>
+  <div class="count-display special_font">{count}</div>
   <button class="btn" on:click={increment}>+</button>
 </div>

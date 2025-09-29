@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Condiment&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
 
 :root{
     --bg-color: rgb(84, 152, 230);
@@ -31,7 +32,8 @@ header{
     margin: 10px;
     text-align: center;
     
-    background: rgba(255, 255, 255, 0.2);
+    /* background: rgba(255, 255, 255, 0.2); */
+    background: rgba(255, 0, 0, 0.411);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);
     backdrop-filter: blur(5px);
@@ -43,7 +45,8 @@ header h1{
 }
 
 .special_font{
-    font-family: "Condiment", cursive;
+    /* font-family: "Condiment", cursive; */
+    font-family: "Asimovian", sans-serif;
     font-weight: 400;
     font-style: normal;
     text-align: center;
@@ -66,7 +69,8 @@ button.glass{
 
     display: flex;
     align-items: center;
-    padding: 5px;
+    justify-content: center;
+    padding: 5px 15px;
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
     user-select: none;
@@ -92,7 +96,8 @@ button{
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-family: "Condiment", cursive;
+    /* font-family: "Condiment", cursive; */
+    font-family: "Asimovian", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 180%;
@@ -106,13 +111,19 @@ button{
 
 footer{
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
     padding: 5px;
     font-size: 80%;
     max-width: 800px;
     margin: auto;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 input{
@@ -125,4 +136,23 @@ input{
     padding: 8px;
     font-size: 120%;
     outline-width: 0;
+}
+input::placeholder{
+    color: rgba(255, 255, 255, 0.664);
+}
+
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.flex > *{
+    margin-right: 5px;
+    margin-top: 5px;
+    flex: 1;
+}
+.flex > *:last-child{
+    margin-right: 0;
 }

@@ -9,7 +9,7 @@
 </div>
 
 <div class="center">
-    <Counter bind:count={count} />
+    <Counter limit=2 bind:count={count} />
 </div>
 
 
@@ -30,10 +30,12 @@
 
     function startFight(){
         if(count){
-            let fight = []
+            let fight = {
+                start_time: Date.now(),
+                players:[]
+            }
             while(count!=0){
-                fight.push({
-                    start_time: Date.now(),
+                fight.players.push({
                     pieces:0,
                     username:""
                 })

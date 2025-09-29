@@ -19,6 +19,10 @@
         right: 0;
         bottom: 0;
         left: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
         
         background: rgba(255, 255, 255, 0.2);
         box-shadow: 0 4px 30px rgba(200, 200, 200, 0.1);
@@ -31,7 +35,6 @@
 
     .popup{
         margin: auto;
-        margin-top: 50px;
         width: 80%;
         max-width: 700px;
         background: rgba(146, 88, 88, 0.8);
