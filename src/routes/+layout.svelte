@@ -6,12 +6,13 @@
 
 	onMount(()=>{
 		let fight = localStorage.getItem("fight")
-		console.log(fight)
 		if(fight){
 			fight = JSON.parse(fight)
 			if(fight.players.some(item=>item.username=="")){
 				goto("/name_fighter")
-			}else( goto("/fight") )
+			}else if(!fight.end_time){ 
+				goto("/fight") 
+			}else{ goto("/congrats") }
 		}
 	})
 </script>

@@ -32,6 +32,7 @@
         if(count){
             let fight = {
                 start_time: Date.now(),
+                end_time: "",
                 players:[]
             }
             while(count!=0){

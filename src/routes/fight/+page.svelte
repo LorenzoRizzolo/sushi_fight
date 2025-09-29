@@ -2,7 +2,7 @@
     <button class="glass" onclick={()=>OpenPopup("annulla")}>
         <img src="/icons/sushi.png" alt=""> Annulla Combattimento
     </button>
-    <button class="glass" onclick={()=>OpenPopup("annulla")}>
+    <button class="glass" onclick={()=>OpenPopup("concludi")}>
         <img src="/icons/sushi.png" alt=""> Concludi Combattimento
     </button>
 </div>
@@ -49,12 +49,12 @@
     </div>
 </Popup>
 
-<Popup name="annulla">
+<Popup name="concludi">
     <h2>Concludi combattimento</h2>
     Sei sicuro di voler concludere il combattimento?
     <br><br>
     <div class="flex">
-        <button class="glass" onclick={goHome}>
+        <button class="glass" onclick={goCongrats}>
             <SushiIcon n={3}/> Si concludi
         </button>
         <button class="glass" onclick={ClosePopup}>
@@ -93,6 +93,13 @@
         ClosePopup()
         localStorage.removeItem("fight")
         goto("/")
+    }
+
+    function goCongrats(){
+        ClosePopup()
+        fight.end_time = Date.now()
+        localStorage.setItem("fight", JSON.stringify(fight))
+        goto("/congrats")
     }
 
 </script>

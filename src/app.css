@@ -22,6 +22,8 @@ body{
 }
 body *{
     color: white;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 main{
