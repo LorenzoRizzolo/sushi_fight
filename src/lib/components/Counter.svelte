@@ -18,6 +18,7 @@
     align-items: center;
     gap: 20px; /* spazio tra pulsanti e numero */
     font-family: sans-serif;
+    user-select: none;
   }
 
   .btn {

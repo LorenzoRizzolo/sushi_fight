@@ -23,7 +23,7 @@
     import { goto } from '$app/navigation';
 
     function goFight() {
-        goto('/fight');
+        goto('/number_fighter');
     }
 </script>
 

@@ -1,6 +1,28 @@
 <div class="flex">
+    <button class="glass" onclick={goBack}>
+        <SushiIcon n={1}/> Cambia numero partecipanti
+    </button>
+
     <button class="glass" onclick={()=>OpenPopup("annulla")}>
-        <img src="/icons/sushi.png" alt=""> Annulla Combattimento
+        <SushiIcon n={2}/> Annulla
+    </button>
+</div>
+
+<div class="title">
+    <h2>Inserisci i nomi dei partecipanti</h2>
+</div>
+
+{#each fight as fighter, i}
+    <div class="flex fighter">
+        <div class="glass icon"><SushiIcon n={RandomIcon()}/></div>
+        <input type="text" bind:value={fight[i].username}>
+    </div>
+{/each}
+
+<br>
+<div class="center">
+    <button class="glass" onclick={inizia_combattimento}>
+        <img src="/icons/sushi.png" alt=""> Inizia a Combattere
     </button>
 </div>
 
@@ -40,6 +62,10 @@
     function goHome(){
         ClosePopup()
         goto("/")
+    }
+
+    function inizia_combattimento(){
+        console.log(fight)
     }
 
 </script>
