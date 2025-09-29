@@ -4,8 +4,10 @@
         {fight.players[0].username} hai ottenuto
     </div>
 
-    <div class="punti special_font firework">
-        {fight.players[0].pieces}
+    <div class="flex">
+        <div class="punti special_font firework">
+            {fight.players[0].pieces}
+        </div>
     </div>
 
     <div class="special_font">
