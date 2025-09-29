@@ -91,8 +91,8 @@
 {/if}
 <div class="counter">
   <!-- <button class="btn" on:click={decrement}>-</button> -->
-  <button on:click={increment}>
+  <div on:click={increment}>
     <div class="count-display special_font">{count}</div>
-  </button>
+  </div>
   <!-- <button class="btn" on:click={increment}>+</button> -->
 </div>
